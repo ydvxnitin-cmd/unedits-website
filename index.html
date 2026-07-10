@@ -1,85 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unedits</title>
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial,sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNEDITS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0B0E1A;
+    --ink: #F5F3EE;
+    --muted: #8A90A6;
+    --accent: #C9A24B;
+  }
 
-        body{
-            background:#0f0f0f;
-            color:white;
-        }
+  *{ margin:0; padding:0; box-sizing:border-box; }
 
-        nav{
-            padding:20px 10%;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        }
+  html,body{
+    height:100%;
+    color:var(--ink);
+  }
 
-        .logo{
-            font-size:28px;
-            font-weight:bold;
-        }
+  body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+    font-family:'Space Grotesk', sans-serif;
+    position:relative;
+    background-color:var(--bg);
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(45,60,120,0.55) 0%, transparent 45%),
+      radial-gradient(circle at 85% 15%, rgba(90,50,130,0.4) 0%, transparent 50%),
+      radial-gradient(circle at 50% 90%, rgba(30,40,90,0.6) 0%, transparent 55%),
+      radial-gradient(circle at 90% 80%, rgba(60,35,90,0.35) 0%, transparent 45%);
+    background-attachment:fixed;
+  }
 
-        .hero{
-            height:80vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            padding:20px;
-        }
+  .mark{
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    font-size:clamp(28px, 4.5vw, 42px);
+    letter-spacing:0.18em;
+    color:var(--ink);
+    margin-bottom:32px;
+  }
 
-        .hero h1{
-            font-size:60px;
-            margin-bottom:15px;
-        }
+  .mark{
+    margin-bottom:32px;
+  }
 
-        .hero p{
-            font-size:20px;
-            color:#ccc;
-            margin-bottom:25px;
-        }
+  .rule{
+    width:36px;
+    height:1px;
+    background:var(--accent);
+    margin:0 auto 48px auto;
+  }
 
-        .btn{
-            background:#6c63ff;
-            color:white;
-            text-decoration:none;
-            padding:12px 25px;
-            border-radius:8px;
-        }
+  h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:clamp(38px, 6vw, 64px);
+    letter-spacing:0.01em;
+    line-height:1.1;
+  }
 
-        footer{
-            text-align:center;
-            padding:30px;
-            color:#999;
-        }
-    </style>
+  p{
+    margin-top:22px;
+    font-size:15px;
+    color:var(--muted);
+    letter-spacing:0.02em;
+    max-width:380px;
+  }
+
+  form{
+    margin-top:44px;
+    display:flex;
+    width:100%;
+    max-width:360px;
+    border-bottom:1px solid rgba(245,243,238,0.2);
+    padding-bottom:12px;
+  }
+
+  input[type="email"]{
+    flex:1;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:var(--ink);
+    font-family:'Space Grotesk', sans-serif;
+    font-size:14px;
+    letter-spacing:0.01em;
+    padding:4px 0;
+  }
+
+  input::placeholder{ color:var(--muted); }
+
+  button{
+    background:none;
+    border:none;
+    color:var(--accent);
+    font-family:'Space Grotesk', sans-serif;
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    cursor:pointer;
+    padding:4px 0 4px 16px;
+  }
+
+  button:hover{ color:var(--ink); }
+
+  input:focus-visible, button:focus-visible{
+    outline:1px solid var(--accent);
+    outline-offset:4px;
+  }
+
+  footer{
+    position:fixed;
+    bottom:32px;
+    font-size:11px;
+    letter-spacing:0.08em;
+    color:var(--muted);
+    opacity:0.6;
+  }
+</style>
 </head>
 <body>
 
-<nav>
-    <div class="logo">UNEDITS</div>
-</nav>
+  <div class="mark">UNEDITS</div>
+  <div class="rule"></div>
 
-<section class="hero">
-    <h1>Creative Solutions For Modern Brands</h1>
-    <p>Video Editing • Graphic Design • Branding</p>
-    <a href="#" class="btn">Contact Us</a>
-</section>
+  <h1>Under Construction</h1>
+  <p>We're crafting something new. Back soon.</p>
 
-<footer>
-    © 2026 UNEDITS. All Rights Reserved.
-</footer>
+  <form action="https://formspree.io/f/mzdlnjlo" method="POST">
+    <input type="email" name="email" placeholder="Your email" required aria-label="Email address">
+    <button type="submit">Notify</button>
+  </form>
+
+  <footer>&copy; 2026 UNEDITS</footer>
 
 </body>
 </html>

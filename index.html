@@ -34,11 +34,73 @@
     position:relative;
     background-color:var(--bg);
     background-image:
-      radial-gradient(circle at 15% 20%, rgba(45,60,120,0.55) 0%, transparent 45%),
-      radial-gradient(circle at 85% 15%, rgba(90,50,130,0.4) 0%, transparent 50%),
-      radial-gradient(circle at 50% 90%, rgba(30,40,90,0.6) 0%, transparent 55%),
-      radial-gradient(circle at 90% 80%, rgba(60,35,90,0.35) 0%, transparent 45%);
+      radial-gradient(ellipse at center, transparent 0%, rgba(11,14,26,0.35) 75%, rgba(11,14,26,0.75) 100%),
+      linear-gradient(160deg, rgba(201,162,75,0.08), transparent 40%, transparent 60%, rgba(11,14,26,0.25)),
+      linear-gradient(rgba(11,14,26,0.45), rgba(11,14,26,0.65)),
+      url('background.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
     background-attachment:fixed;
+    overflow:hidden;
+  }
+
+  body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  .orb{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(80px);
+    z-index:0;
+    pointer-events:none;
+  }
+  .orb1{
+    width:420px; height:420px;
+    background:radial-gradient(circle, rgba(60,80,160,0.55), transparent 70%);
+    top:-100px; left:-120px;
+    animation: float1 22s ease-in-out infinite;
+  }
+  .orb2{
+    width:480px; height:480px;
+    background:radial-gradient(circle, rgba(120,60,170,0.45), transparent 70%);
+    bottom:-140px; right:-100px;
+    animation: float2 26s ease-in-out infinite;
+  }
+  .orb3{
+    width:300px; height:300px;
+    background:radial-gradient(circle, rgba(80,50,130,0.4), transparent 70%);
+    top:40%; right:10%;
+    animation: float3 30s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    @keyframes float1{
+      0%,100%{ transform:translate(0,0); }
+      50%{ transform:translate(80px,60px); }
+    }
+    @keyframes float2{
+      0%,100%{ transform:translate(0,0); }
+      50%{ transform:translate(-70px,-50px); }
+    }
+    @keyframes float3{
+      0%,100%{ transform:translate(0,0) scale(1); }
+      50%{ transform:translate(-40px,40px) scale(1.15); }
+    }
+  }
+
+  .content{
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
   }
 
   .mark{
@@ -74,7 +136,21 @@
     font-size:15px;
     color:var(--muted);
     letter-spacing:0.02em;
-    max-width:380px;
+    max-width:420px;
+  }
+
+  p em{
+    font-style:italic;
+  }
+
+  .coming-soon{
+    margin-top:30px;
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    font-size:12px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--accent);
   }
 
   form{
@@ -119,6 +195,20 @@
     outline-offset:4px;
   }
 
+  @keyframes fadeUp{
+    from{ opacity:0; transform:translateY(16px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  .anim{
+    opacity:0;
+    animation: fadeUp 0.9s ease forwards;
+  }
+  .anim1{ animation-delay:0.1s; }
+  .anim2{ animation-delay:0.25s; }
+  .anim3{ animation-delay:0.4s; }
+  .anim4{ animation-delay:0.55s; }
+  .anim5{ animation-delay:0.7s; }
+
   footer{
     position:fixed;
     bottom:32px;
@@ -131,18 +221,24 @@
 </head>
 <body>
 
-  <div class="mark">UNEDITS</div>
-  <div class="rule"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
 
-  <h1>Every Detail Matters</h1>
-  <p>We are crafting distinctive identities through thoughtful design, strategic thinking, and uncompromising craftsmanship.</p>
-  
-  <p>" Comming Soon "</p>
+  <div class="content">
+    <div class="mark anim anim1">UNEDITS</div>
+    <div class="rule anim anim1"></div>
 
-  <form action="https://formspree.io/f/mzdlnjlo" method="POST">
-    <input type="email" name="email" placeholder="Your email" required aria-label="Email address">
-    <button type="submit">Notify</button>
-  </form>
+    <h1 class="anim anim2">Built for Those Who<br>Notice the Difference.</h1>
+    <p class="anim anim3"><em>We are crafting distinctive identities through thoughtful design, strategic thinking, and uncompromising craftsmanship.</em></p>
+
+    <div class="coming-soon anim anim4">Coming Soon</div>
+
+    <form class="anim anim5" action="https://formspree.io/f/mzdlnjlo" method="POST">
+      <input type="email" name="email" placeholder="Your email" required aria-label="Email address">
+      <button type="submit">Notify</button>
+    </form>
+  </div>
 
   <footer>&copy; 2026 UNEDITS</footer>
 

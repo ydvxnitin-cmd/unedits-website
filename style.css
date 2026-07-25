@@ -546,6 +546,38 @@ header{
   color:var(--off-white);
 }
 
+/* ===== ABOUT PAGE ===== */
+.about-page{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:160px 8vw 120px;
+}
+.about-copy{
+  max-width:760px;
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+.about-copy p{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:clamp(15px,1.6vw,18px);
+  line-height:1.8;
+  color:var(--muted);
+  text-align:center;
+}
+.about-copy .about-line{
+  font-family:'Montserrat',sans-serif;
+  font-weight:800;
+  font-size:clamp(16px,2vw,20px);
+  letter-spacing:0.16em;
+  color:var(--off-white);
+  margin-top:12px;
+}
+
 /* ===== PLACEHOLDER SECTIONS ===== */
 .section-placeholder{
   min-height:100vh;

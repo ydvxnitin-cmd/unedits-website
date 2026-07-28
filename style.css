@@ -570,7 +570,7 @@ header{
   font-weight:600;
 }
 .policy-intro{
-  text-align:center;
+  text-align:left;
   color:#ffffff !important;
   margin-bottom:44px !important;
 }
@@ -595,7 +595,7 @@ header{
   margin-bottom:10px;
 }
 .policy-link{
-  color:var(--gold-a);
+  color:#ffffff;
   text-decoration:none;
   border-bottom:1px solid rgba(154,160,170,0.4);
 }

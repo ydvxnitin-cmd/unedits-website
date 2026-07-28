@@ -569,6 +569,12 @@ header{
   color:var(--off-white);
   font-weight:600;
 }
+.policy-intro{
+  text-align:center;
+  font-size:clamp(15px,1.6vw,18px) !important;
+  line-height:1.8 !important;
+  margin-bottom:44px !important;
+}
 .policy-copy h2{
   font-family:'Montserrat',sans-serif;
   font-weight:700;

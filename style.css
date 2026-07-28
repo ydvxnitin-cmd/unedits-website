@@ -553,7 +553,7 @@ header{
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  padding:110px 8vw 100px;
+  padding:92px 8vw 100px;
 }
 .about-heading{
   font-family:'Montserrat',sans-serif;
@@ -563,7 +563,7 @@ header{
   text-transform:uppercase;
   text-align:center;
   color:#ffffff;
-  margin-bottom:28px;
+  margin-bottom:90px;
 }
 .about-copy{
   max-width:760px;

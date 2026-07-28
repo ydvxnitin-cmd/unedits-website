@@ -199,7 +199,7 @@ header{
   width:100%;
   height:100%;
   object-fit:cover;
-  opacity:0.35;
+  opacity:0.65;
   transform:scale(1.08);
   animation:heroKenBurns 16s ease-in-out infinite alternate;
   will-change:transform;
@@ -213,7 +213,7 @@ header{
   position:absolute;
   inset:0;
   background:
-    linear-gradient(180deg, rgba(6,6,10,0.55) 0%, rgba(6,6,10,0.75) 60%, var(--navy-deep) 100%);
+    linear-gradient(180deg, rgba(6,6,10,0.15) 0%, rgba(6,6,10,0.4) 60%, var(--navy-deep) 100%);
 }
 .hero-content{
   position:relative;
@@ -485,11 +485,11 @@ header{
   width:100%;
   height:100%;
   object-fit:cover;
-  filter:grayscale(35%) brightness(0.75);
+  filter:grayscale(20%) brightness(0.92);
   transition:filter .4s ease, transform .5s ease;
 }
 .portfolio-card:hover img{
-  filter:grayscale(10%) brightness(0.85);
+  filter:grayscale(5%) brightness(1);
   transform:scale(1.04);
 }
 .pc-1{ background:linear-gradient(150deg,#1e2126,#0b0b0f 70%); }
@@ -569,7 +569,7 @@ header{
   width:100%;
   height:100%;
   object-fit:cover;
-  filter:grayscale(40%) brightness(0.55);
+  filter:grayscale(20%) brightness(0.8);
 }
 .teaser-frame::before{
   content:"";

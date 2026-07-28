@@ -31,3 +31,29 @@ if(track){
   `).join('');
   track.innerHTML = renderSet() + renderSet();
 }
+
+/* ===== Scroll-reveal for sections ===== */
+const revealEls = document.querySelectorAll('.reveal-up');
+if(revealEls.length){
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+}
+
+/* ===== Hero parallax on scroll ===== */
+const heroBgWrap = document.getElementById('heroBgWrap');
+if(heroBgWrap){
+  window.addEventListener('scroll', () => {
+    const offset = window.scrollY;
+    if(offset < window.innerHeight){
+      heroBgWrap.style.transform = `translateY(${offset * 0.15}px)`;
+    }
+  }, { passive: true });
+}

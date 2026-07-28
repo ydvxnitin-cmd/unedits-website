@@ -546,6 +546,56 @@ header{
   color:var(--off-white);
 }
 
+/* ===== POLICY / LEGAL PAGES ===== */
+.policy-page{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding:150px 8vw 120px;
+}
+.policy-copy{
+  max-width:760px;
+  width:100%;
+}
+.policy-copy p{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:15px;
+  line-height:1.85;
+  color:var(--muted);
+  margin-bottom:22px;
+}
+.policy-copy p strong{
+  color:var(--off-white);
+  font-weight:600;
+}
+.policy-copy h2{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:clamp(18px,2.2vw,22px);
+  color:var(--off-white);
+  margin:48px 0 18px;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--hairline);
+}
+.policy-copy ul{
+  margin:0 0 22px;
+  padding-left:22px;
+}
+.policy-copy li{
+  font-family:'Inter',sans-serif;
+  font-size:15px;
+  line-height:1.85;
+  color:var(--muted);
+  margin-bottom:10px;
+}
+.policy-link{
+  color:var(--gold-a);
+  text-decoration:none;
+  border-bottom:1px solid rgba(154,160,170,0.4);
+}
+.policy-link:hover{ color:var(--gold-b); }
+
 /* ===== ABOUT PAGE ===== */
 .about-page{
   min-height:100vh;

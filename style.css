@@ -558,12 +558,12 @@ header{
 .about-heading{
   font-family:'Montserrat',sans-serif;
   font-weight:800;
-  font-size:clamp(16px,2vw,20px);
+  font-size:clamp(20px,2.6vw,26px);
   letter-spacing:0.16em;
   text-transform:uppercase;
   text-align:center;
-  color:var(--gold-a);
-  margin-bottom:56px;
+  color:var(--off-white);
+  margin-bottom:28px;
 }
 .about-copy{
   max-width:760px;

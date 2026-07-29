@@ -47,7 +47,20 @@ if(revealEls.length){
   revealEls.forEach(el => revealObserver.observe(el));
 }
 
-/* ===== Hero parallax on scroll ===== */
+/* ===== Transparent header over hero, solid elsewhere ===== */
+const heroSection = document.getElementById('hero');
+const headerEl = document.querySelector('header');
+if(heroSection && headerEl){
+  const toggleHeader = () => {
+    if(window.scrollY < heroSection.offsetHeight - 100){
+      headerEl.classList.add('header-transparent');
+    } else {
+      headerEl.classList.remove('header-transparent');
+    }
+  };
+  toggleHeader();
+  window.addEventListener('scroll', toggleHeader, { passive: true });
+}
 const heroBgWrap = document.getElementById('heroBgWrap');
 if(heroBgWrap){
   window.addEventListener('scroll', () => {

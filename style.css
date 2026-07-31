@@ -260,8 +260,9 @@ header.header-transparent{
 }
 .carousel-dots{
   position:absolute;
-  right:6vw;
-  bottom:70px;
+  left:50%;
+  bottom:28px;
+  transform:translateX(-50%);
   z-index:1;
   display:flex;
   gap:10px;

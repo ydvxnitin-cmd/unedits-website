@@ -63,13 +63,25 @@ if(heroSection && headerEl){
 }
 /* ===== Hero work carousel ===== */
 const carouselSlides = document.querySelectorAll('.carousel-slide');
-if(carouselSlides.length){
+const carouselDotsWrap = document.getElementById('carouselDots');
+if(carouselSlides.length && carouselDotsWrap){
   let currentSlide = 0;
+
+  carouselSlides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    if(i === 0) dot.classList.add('active');
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    dot.addEventListener('click', () => goToSlide(i));
+    carouselDotsWrap.appendChild(dot);
+  });
+  const dots = carouselDotsWrap.querySelectorAll('button');
 
   function goToSlide(index){
     carouselSlides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
     currentSlide = index;
     carouselSlides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
   }
 
   setInterval(() => {

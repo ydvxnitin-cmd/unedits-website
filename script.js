@@ -61,12 +61,31 @@ if(heroSection && headerEl){
   toggleHeader();
   window.addEventListener('scroll', toggleHeader, { passive: true });
 }
-const heroBgWrap = document.getElementById('heroBgWrap');
-if(heroBgWrap){
-  window.addEventListener('scroll', () => {
-    const offset = window.scrollY;
-    if(offset < window.innerHeight){
-      heroBgWrap.style.transform = `translateY(${offset * 0.15}px)`;
-    }
-  }, { passive: true });
+/* ===== Hero work carousel ===== */
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const carouselDotsWrap = document.getElementById('carouselDots');
+if(carouselSlides.length && carouselDotsWrap){
+  let currentSlide = 0;
+
+  carouselSlides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    if(i === 0) dot.classList.add('active');
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    dot.addEventListener('click', () => goToSlide(i));
+    carouselDotsWrap.appendChild(dot);
+  });
+  const dots = carouselDotsWrap.querySelectorAll('button');
+
+  function goToSlide(index){
+    carouselSlides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = index;
+    carouselSlides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  setInterval(() => {
+    const next = (currentSlide + 1) % carouselSlides.length;
+    goToSlide(next);
+  }, 5000);
 }

@@ -231,9 +231,9 @@ header.header-transparent{
 .carousel-caption{
   position:absolute;
   left:50%;
-  bottom:64px;
-  top:auto;
-  transform:translate(-50%, 20px);
+  top:50%;
+  bottom:auto;
+  transform:translate(-50%, -40%);
   z-index:1;
   max-width:600px;
   width:90%;
@@ -243,7 +243,7 @@ header.header-transparent{
 }
 .carousel-slide.active .carousel-caption{
   opacity:1;
-  transform:translate(-50%, 0);
+  transform:translate(-50%, -50%);
 }
 .carousel-caption h3{
   font-family:'Montserrat',sans-serif;

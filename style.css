@@ -83,11 +83,11 @@ header.header-transparent{
   display:inline-flex;
   flex-direction:column;
   justify-content:space-between;
-  width:0.58em;
-  height:0.6em;
+  width:0.72em;
+  height:0.62em;
   vertical-align:middle;
-  margin:0 0.03em;
-  transform:translateY(-0.03em);
+  margin:0 0.04em;
+  transform:translateY(-0.02em);
 }
 .e-mark i{
   display:block;

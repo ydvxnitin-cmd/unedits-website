@@ -73,7 +73,7 @@ header.header-transparent{
 }
 .wordmark{
   font-family:'Montserrat',sans-serif;
-  font-weight:800;
+  font-weight:500;
   font-size:20px;
   letter-spacing:0.22em;
   color:var(--off-white);
@@ -91,8 +91,8 @@ header.header-transparent{
 }
 .e-mark i{
   display:block;
-  height:0.11em;
-  min-height:2px;
+  height:0.07em;
+  min-height:1.5px;
   background:currentColor;
   border-radius:1px;
   font-style:normal;
@@ -139,7 +139,7 @@ header.header-transparent{
 
 .drawer-top .drawer-logo{
   font-family:'Montserrat',sans-serif;
-  font-weight:800;
+  font-weight:500;
   font-size:16px;
   letter-spacing:0.2em;
   color:var(--off-white);
@@ -273,7 +273,7 @@ header.header-transparent{
 .carousel-caption p{
   font-family:'Inter',sans-serif;
   font-size:14px;
-  color:var(--muted);
+  color:rgba(240,240,242,0.85);
   line-height:1.6;
 }
 .carousel-dots{
@@ -1023,7 +1023,7 @@ footer{
 }
 .footer-brand .wordmark-footer{
   font-family:'Montserrat',sans-serif;
-  font-weight:800;
+  font-weight:500;
   font-size:22px;
   letter-spacing:0.18em;
   background:linear-gradient(120deg,var(--gold-b),var(--gold-a));

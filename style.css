@@ -84,10 +84,10 @@ header.header-transparent{
   flex-direction:column;
   justify-content:space-between;
   width:0.72em;
-  height:0.62em;
-  vertical-align:middle;
-  margin:0 0.04em;
-  transform:translateY(-0.02em);
+  height:0.6em;
+  vertical-align:baseline;
+  margin:0 0.05em;
+  transform:translateY(-0.15em);
 }
 .e-mark i{
   display:block;

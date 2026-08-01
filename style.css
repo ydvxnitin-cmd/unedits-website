@@ -285,7 +285,7 @@ header.header-transparent{
 /* ===== SERVICES (marquee cards) ===== */
 .services{
   border-top:1px solid var(--hairline);
-  padding:120px 0 100px;
+  padding:90px 0 100px;
   background:radial-gradient(ellipse 80% 60% at 50% -10%, rgba(154,160,170,0.08), transparent 60%);
 }
 .services-eyebrow{
@@ -414,7 +414,7 @@ header.header-transparent{
 
 /* ===== EDITORIAL INTRO (Pentagram-inspired) ===== */
 .editorial-intro{
-  padding:100px 6vw 60px;
+  padding:90px 6vw 60px;
   border-top:1px solid var(--hairline);
   max-width:1200px;
   margin:0 auto;
@@ -464,7 +464,7 @@ header.header-transparent{
 
 /* ===== WORK GRID (Pentagram-inspired asymmetric grid) ===== */
 .work-grid-section{
-  padding:60px 6vw 120px;
+  padding:90px 6vw 120px;
   max-width:1200px;
   margin:0 auto;
 }
@@ -651,7 +651,7 @@ header.header-transparent{
 /* ===== TEASER VIDEO ===== */
 .teaser{
   border-top:1px solid var(--hairline);
-  padding:120px 6vw 130px;
+  padding:90px 6vw 130px;
   background:radial-gradient(ellipse 70% 60% at 50% 100%, rgba(154,160,170,0.06), transparent 60%);
 }
 .teaser-inner{ max-width:900px; margin:0 auto; }
@@ -726,7 +726,7 @@ header.header-transparent{
 
 /* ===== CONTACT PAGE ===== */
 .contact-page{
-  padding:150px 6vw 120px;
+  padding:90px 6vw 120px;
 }
 .contact-grid{
   max-width:1000px;
@@ -842,7 +842,7 @@ header.header-transparent{
   min-height:100vh;
   display:flex;
   justify-content:center;
-  padding:150px 8vw 120px;
+  padding:90px 8vw 120px;
 }
 .policy-copy{
   max-width:760px;
@@ -899,7 +899,7 @@ header.header-transparent{
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  padding:150px 8vw 100px;
+  padding:90px 8vw 100px;
 }
 .about-copy{
   max-width:760px;

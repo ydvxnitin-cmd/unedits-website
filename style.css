@@ -71,12 +71,9 @@ header.header-transparent{
   text-align:center;
   text-decoration:none;
 }
-.wordmark{
-  font-family:'Montserrat',sans-serif;
-  font-weight:500;
-  font-size:20px;
-  letter-spacing:0.16em;
-  color:var(--off-white);
+.wordmark-img{
+  height:16px;
+  width:auto;
   display:block;
 }
 .e-mark{
@@ -127,12 +124,9 @@ header.header-transparent{
 }
 .drawer.open{ transform:translateX(0); }
 
-.drawer-top .drawer-logo{
-  font-family:'Montserrat',sans-serif;
-  font-weight:500;
-  font-size:16px;
-  letter-spacing:0.16em;
-  color:var(--off-white);
+.drawer-logo-img{
+  height:14px;
+  width:auto;
 }
 .drawer-links{
   display:flex;
@@ -1011,18 +1005,9 @@ footer{
   flex-wrap:wrap;
   padding-bottom:48px;
 }
-.footer-brand .wordmark-footer{
-  font-family:'Montserrat',sans-serif;
-  font-weight:500;
-  font-size:22px;
-  letter-spacing:0.16em;
-  background:linear-gradient(120deg,var(--gold-b),var(--gold-a));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-.footer-brand .wordmark-footer .e-mark{
-  fill:var(--gold-a);
+.footer-brand .wordmark-footer-img{
+  height:18px;
+  width:auto;
 }
 .footer-brand p{
   color:var(--muted);

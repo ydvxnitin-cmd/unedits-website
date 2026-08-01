@@ -80,22 +80,12 @@ header.header-transparent{
   display:block;
 }
 .e-mark{
-  display:inline-flex;
-  flex-direction:column;
-  justify-content:space-between;
-  width:0.72em;
-  height:0.6em;
-  vertical-align:baseline;
+  display:inline-block;
+  width:0.66em;
+  height:0.72em;
+  vertical-align:-0.04em;
   margin:0 0.05em;
-  transform:translateY(-0.15em);
-}
-.e-mark i{
-  display:block;
-  height:0.1em;
-  min-height:2px;
-  background:currentColor;
-  border-radius:1px;
-  font-style:normal;
+  fill:currentColor;
 }
 .wordmark-tagline{
   font-family:'Inter',sans-serif;
@@ -1031,8 +1021,8 @@ footer{
   background-clip:text;
   color:transparent;
 }
-.footer-brand .wordmark-footer .e-mark i{
-  background:linear-gradient(120deg,var(--gold-b),var(--gold-a));
+.footer-brand .wordmark-footer .e-mark{
+  fill:var(--gold-a);
 }
 .footer-brand p{
   color:var(--muted);

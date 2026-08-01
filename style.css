@@ -75,7 +75,7 @@ header.header-transparent{
   font-family:'Montserrat',sans-serif;
   font-weight:500;
   font-size:20px;
-  letter-spacing:0.22em;
+  letter-spacing:0.16em;
   color:var(--off-white);
   display:block;
 }
@@ -91,8 +91,8 @@ header.header-transparent{
 }
 .e-mark i{
   display:block;
-  height:0.07em;
-  min-height:1.5px;
+  height:0.1em;
+  min-height:2px;
   background:currentColor;
   border-radius:1px;
   font-style:normal;
@@ -141,7 +141,7 @@ header.header-transparent{
   font-family:'Montserrat',sans-serif;
   font-weight:500;
   font-size:16px;
-  letter-spacing:0.2em;
+  letter-spacing:0.16em;
   color:var(--off-white);
 }
 .drawer-links{
@@ -273,7 +273,7 @@ header.header-transparent{
 .carousel-caption p{
   font-family:'Inter',sans-serif;
   font-size:14px;
-  color:rgba(240,240,242,0.85);
+  color:#ffffff;
   line-height:1.6;
 }
 .carousel-dots{
@@ -1025,7 +1025,7 @@ footer{
   font-family:'Montserrat',sans-serif;
   font-weight:500;
   font-size:22px;
-  letter-spacing:0.18em;
+  letter-spacing:0.16em;
   background:linear-gradient(120deg,var(--gold-b),var(--gold-a));
   -webkit-background-clip:text;
   background-clip:text;

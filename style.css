@@ -25,7 +25,7 @@ header{
   display:grid;
   grid-template-columns:1fr auto 1fr;
   align-items:center;
-  padding:22px 5vw;
+  padding:14px 5vw;
   background:rgba(6,6,10,0.72);
   backdrop-filter:blur(14px) saturate(140%);
   -webkit-backdrop-filter:blur(14px) saturate(140%);

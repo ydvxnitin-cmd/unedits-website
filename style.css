@@ -72,7 +72,7 @@ header.header-transparent{
   text-decoration:none;
 }
 .wordmark-img{
-  height:16px;
+  height:18px;
   width:auto;
   display:block;
 }
@@ -125,7 +125,7 @@ header.header-transparent{
 .drawer.open{ transform:translateX(0); }
 
 .drawer-logo-img{
-  height:14px;
+  height:18px;
   width:auto;
 }
 .drawer-links{

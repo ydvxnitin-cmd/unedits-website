@@ -7,6 +7,7 @@
   --off-white:#f0f0f2;
   --muted:#8b8d93;
   --hairline:rgba(240,240,242,0.08);
+  --header-height:72px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -416,10 +417,11 @@ header.header-transparent{
 
 /* ===== EDITORIAL INTRO (Pentagram-inspired) ===== */
 .editorial-intro{
-  min-height:80vh;
+  min-height:50vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
+  align-items:center;
   width:100%;
   background:#f4f4f2;
 }
@@ -428,6 +430,7 @@ header.header-transparent{
   max-width:1200px;
   margin:0 auto;
   width:100%;
+  text-align:center;
 }
 .editorial-intro h2{
   font-family:'Montserrat',sans-serif;
@@ -445,6 +448,7 @@ header.header-transparent{
 .tag-cloud{
   display:flex;
   flex-wrap:wrap;
+  justify-content:center;
   gap:10px 12px;
   align-items:center;
 }
@@ -681,7 +685,7 @@ header.header-transparent{
 
 /* ===== TEASER VIDEO ===== */
 .teaser{
-  min-height:80vh;
+  min-height:70vh;
   display:flex;
   align-items:center;
   justify-content:center;

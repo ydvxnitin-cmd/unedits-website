@@ -421,7 +421,7 @@ header.header-transparent{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  align-items:center;
+  align-items:flex-start;
   width:100%;
   background:#f4f4f2;
 }
@@ -430,7 +430,7 @@ header.header-transparent{
   max-width:1200px;
   margin:0 auto;
   width:100%;
-  text-align:center;
+  text-align:left;
 }
 .editorial-intro h2{
   font-family:'Montserrat',sans-serif;
@@ -448,7 +448,7 @@ header.header-transparent{
 .tag-cloud{
   display:flex;
   flex-wrap:wrap;
-  justify-content:center;
+  justify-content:flex-start;
   gap:10px 12px;
   align-items:center;
 }
@@ -693,17 +693,18 @@ header.header-transparent{
 
 /* ===== TEASER VIDEO ===== */
 .teaser{
-  min-height:70vh;
+  min-height:50vh;
   display:flex;
   align-items:center;
   justify-content:center;
   width:100%;
   background:#f4f4f2;
 }
-.teaser-inner{ max-width:1300px; margin:0 auto; width:100%; padding:60px 6vw; }
+.teaser-inner{ max-width:1300px; margin:0 auto; width:100%; padding:24px 6vw; }
 .teaser-frame{
   position:relative;
-  aspect-ratio:16/9;
+  aspect-ratio:21/9;
+  max-height:38vh;
   border-radius:18px;
   background:linear-gradient(150deg, var(--navy-raised), var(--navy-deep) 75%);
   border:1px solid rgba(154,160,170,0.22);

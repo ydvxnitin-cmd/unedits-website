@@ -61,6 +61,8 @@ if(heroSection && headerEl){
   toggleHeader();
   window.addEventListener('scroll', toggleHeader, { passive: true });
 }
+/* ===== Teaser video: autoplays via embedded iframe, no click needed ===== */
+
 /* ===== Hero work carousel ===== */
 const carouselSlides = document.querySelectorAll('.carousel-slide');
 const carouselDotsWrap = document.getElementById('carouselDots');

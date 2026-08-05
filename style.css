@@ -693,7 +693,7 @@ header.header-transparent{
 
 /* ===== TEASER VIDEO ===== */
 .teaser{
-  min-height:50vh;
+  min-height:65vh;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -704,7 +704,7 @@ header.header-transparent{
 .teaser-frame{
   position:relative;
   aspect-ratio:21/9;
-  max-height:38vh;
+  max-height:48vh;
   max-width:100%;
   margin:0 auto;
   border-radius:18px;

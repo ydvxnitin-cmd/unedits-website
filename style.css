@@ -705,6 +705,8 @@ header.header-transparent{
   position:relative;
   aspect-ratio:21/9;
   max-height:38vh;
+  max-width:100%;
+  margin:0 auto;
   border-radius:18px;
   background:linear-gradient(150deg, var(--navy-raised), var(--navy-deep) 75%);
   border:1px solid rgba(154,160,170,0.22);

@@ -483,7 +483,7 @@ header.header-transparent{
   flex-direction:column;
   justify-content:center;
   width:100%;
-  background:#f4f4f2;
+  background:var(--navy-deep);
 }
 .work-grid-inner{
   padding:60px 6vw;
@@ -498,10 +498,10 @@ header.header-transparent{
 .work-grid-head .section-heading{
   text-align:left;
   margin:0 0 8px;
-  color:#0b0b0f;
+  color:var(--off-white);
 }
 .work-grid-head .section-eyebrow{
-  color:#9a7a1f;
+  color:var(--gold-a);
 }
 .work-grid{
   display:grid;

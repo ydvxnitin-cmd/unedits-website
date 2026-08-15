@@ -47,6 +47,41 @@ if(revealEls.length){
   revealEls.forEach(el => revealObserver.observe(el));
 }
 
+/* ===== Stats count-up on scroll ===== */
+const statNums = document.querySelectorAll('.stat-num');
+if(statNums.length){
+  const animateCount = (el) => {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1400;
+    const startTime = performance.now();
+
+    const step = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = current + suffix;
+      if(progress < 1){
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = target + suffix;
+      }
+    };
+    requestAnimationFrame(step);
+  };
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        animateCount(entry.target);
+        statObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  statNums.forEach(el => statObserver.observe(el));
+}
+
 /* ===== Transparent header over hero, solid elsewhere ===== */
 const heroSection = document.getElementById('hero');
 const headerEl = document.querySelector('header');

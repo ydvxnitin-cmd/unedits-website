@@ -581,7 +581,7 @@ header.header-transparent{
   justify-content:center;
   width:100%;
   background:var(--navy-deep);
-  padding:10px 6vw;
+  padding:60px 6vw 10px;
   overflow:hidden;
 }
 .stats-inner{
@@ -592,7 +592,7 @@ header.header-transparent{
   padding:0 6vw;
 }
 .stats-inner .section-heading{
-  margin-bottom:20px;
+  margin-bottom:60px;
   font-size:clamp(20px,3vw,32px);
 }
 .stats-map-wrap{
@@ -676,7 +676,21 @@ header.header-transparent{
   flex-shrink:0;
 }
 @media (max-width:600px){
-  .stats-row{ gap:12px; }
+  .stats-section{
+    height:auto;
+    min-height:100vh;
+    overflow:visible;
+    padding:100px 6vw 40px;
+  }
+  .stats-inner .section-heading{
+    margin-bottom:24px;
+    font-size:22px;
+  }
+  .stats-map-wrap{
+    max-width:100%;
+    margin:10px auto;
+  }
+  .stats-row{ gap:12px; margin-top:24px; }
   .stat-num{ font-size:22px; }
   .stat-label{ font-size:10px; }
   .stat-divider{ height:36px; }

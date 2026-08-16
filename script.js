@@ -1,128 +1,107 @@
-function openDrawer(){
-  document.getElementById('drawer').classList.add('open');
-  document.getElementById('drawerOverlay').classList.add('open');
-}
-function closeDrawer(){
-  document.getElementById('drawer').classList.remove('open');
-  document.getElementById('drawerOverlay').classList.remove('open');
-}
+/* ===== INDEX (HAMBURGER) PANEL ===== */
+const indexToggle = document.getElementById('indexToggle');
+const indexPanel = document.getElementById('indexPanel');
 
-/* ===== Services marquee cards ===== */
-const services = [
-  { mark:"“", title:"Video Editing", desc:"Every frame cut with intention — pace, rhythm, and story shaped for the platform it lives on.", num:"01" },
-  { mark:"“", title:"Graphic Design", desc:"Visuals that hold attention for a reason, built on a clear hierarchy and a disciplined hand.", num:"02" },
-  { mark:"“", title:"Branding", desc:"Identity systems that carry a point of view — from mark to voice to the smallest detail.", num:"03" },
-  { mark:"“", title:"UI / UX Design", desc:"Interfaces designed around how people actually move through a screen, not how it looks in a deck.", num:"04" },
-  { mark:"“", title:"Website Design", desc:"Sites built to load fast, read clearly, and convert — form always in service of function.", num:"05" },
-];
-
-const track = document.getElementById('servicesTrack');
-if(track){
-  const renderSet = () => services.map(s => `
-    <div class="service-card">
-      <span class="service-mark">${s.mark}</span>
-      <h3 class="service-title">${s.title}</h3>
-      <p class="service-desc">${s.desc}</p>
-      <div class="service-foot">
-        <span class="service-num">${s.num} / UNEDITS</span>
-        <span class="service-dot"></span>
-      </div>
-    </div>
-  `).join('');
-  track.innerHTML = renderSet() + renderSet();
+function toggleIndex(open){
+  const isOpen = open !== undefined ? open : !indexPanel.classList.contains('open');
+  indexPanel.classList.toggle('open', isOpen);
+  indexToggle.setAttribute('aria-expanded', String(isOpen));
+}
+if(indexToggle){
+  indexToggle.addEventListener('click', () => toggleIndex());
 }
 
-/* ===== Scroll-reveal for sections ===== */
-const revealEls = document.querySelectorAll('.reveal-up');
-if(revealEls.length){
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('in-view');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+/* ===== SLIDES / SCROLL-SNAP SETUP ===== */
+const scrollWrap = document.getElementById('scrollWrap');
+const slides = Array.from(document.querySelectorAll('.slide'));
+const dotNav = document.getElementById('dotNav');
 
-  revealEls.forEach(el => revealObserver.observe(el));
-}
-
-/* ===== Stats count-up on scroll ===== */
-const statNums = document.querySelectorAll('.stat-num');
-if(statNums.length){
-  const animateCount = (el) => {
-    const target = parseInt(el.getAttribute('data-target'), 10);
-    const suffix = el.getAttribute('data-suffix') || '';
-    const duration = 1400;
-    const startTime = performance.now();
-
-    const step = (now) => {
-      const progress = Math.min((now - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(eased * target);
-      el.textContent = current + suffix;
-      if(progress < 1){
-        requestAnimationFrame(step);
-      } else {
-        el.textContent = target + suffix;
-      }
-    };
-    requestAnimationFrame(step);
-  };
-
-  const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        animateCount(entry.target);
-        statObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.4 });
-
-  statNums.forEach(el => statObserver.observe(el));
-}
-
-/* ===== Transparent header over hero, solid elsewhere ===== */
-const heroSection = document.getElementById('hero');
-const headerEl = document.querySelector('header');
-if(heroSection && headerEl){
-  const toggleHeader = () => {
-    if(window.scrollY < heroSection.offsetHeight - 100){
-      headerEl.classList.add('header-transparent');
-    } else {
-      headerEl.classList.remove('header-transparent');
-    }
-  };
-  toggleHeader();
-  window.addEventListener('scroll', toggleHeader, { passive: true });
-}
-/* ===== Teaser video: autoplays via embedded iframe, no click needed ===== */
-
-/* ===== Hero work carousel ===== */
-const carouselSlides = document.querySelectorAll('.carousel-slide');
-const carouselDotsWrap = document.getElementById('carouselDots');
-if(carouselSlides.length && carouselDotsWrap){
-  let currentSlide = 0;
-
-  carouselSlides.forEach((_, i) => {
+/* Build dot nav buttons */
+if(dotNav && slides.length){
+  slides.forEach((slide, i) => {
     const dot = document.createElement('button');
     if(i === 0) dot.classList.add('active');
-    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    dot.setAttribute('aria-label', `Go to section ${i + 1}`);
     dot.addEventListener('click', () => goToSlide(i));
-    carouselDotsWrap.appendChild(dot);
+    dotNav.appendChild(dot);
   });
-  const dots = carouselDotsWrap.querySelectorAll('button');
-
-  function goToSlide(index){
-    carouselSlides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    currentSlide = index;
-    carouselSlides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-  }
-
-  setInterval(() => {
-    const next = (currentSlide + 1) % carouselSlides.length;
-    goToSlide(next);
-  }, 5000);
 }
+const dots = dotNav ? dotNav.querySelectorAll('button') : [];
+
+function goToSlide(index){
+  const target = slides[index];
+  if(!target) return;
+  target.scrollIntoView({ behavior:'smooth', block:'start' });
+  toggleIndex(false);
+}
+
+/* Handle in-page index links + back-arrow buttons */
+document.querySelectorAll('[data-target]').forEach(el => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    const idx = parseInt(el.getAttribute('data-target'), 10);
+    goToSlide(idx);
+  });
+});
+
+/* ===== ACTIVE SLIDE OBSERVER (drives the cinematic zoom/fade) ===== */
+if(slides.length){
+  const slideObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const idx = parseInt(entry.target.getAttribute('data-index'), 10);
+      if(entry.isIntersecting && entry.intersectionRatio >= 0.55){
+        entry.target.classList.add('active');
+        dots.forEach(d => d.classList.remove('active'));
+        if(dots[idx]) dots[idx].classList.add('active');
+
+        /* trigger stat count-up once, when the numbers slide activates */
+        if(entry.target.id === 'numbers'){
+          animateStats();
+        }
+      } else if(!entry.isIntersecting){
+        entry.target.classList.remove('active');
+      }
+    });
+  }, { threshold:[0, 0.55, 1] });
+
+  slides.forEach(slide => slideObserver.observe(slide));
+
+  /* Activate the first slide immediately on load (before any scroll/intersection fires) */
+  requestAnimationFrame(() => slides[0].classList.add('active'));
+}
+
+/* ===== STAT COUNT-UP ===== */
+let statsAnimated = false;
+function animateStats(){
+  if(statsAnimated) return;
+  statsAnimated = true;
+  document.querySelectorAll('.stat-num').forEach(el => {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1300;
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+      else el.textContent = target + suffix;
+    };
+    requestAnimationFrame(step);
+  });
+}
+
+/* ===== KEYBOARD NAVIGATION (up/down arrows jump slides) ===== */
+window.addEventListener('keydown', (e) => {
+  if(indexPanel.classList.contains('open')) return;
+  const current = slides.findIndex(s => s.classList.contains('active'));
+  if(e.key === 'ArrowDown' || e.key === 'PageDown'){
+    e.preventDefault();
+    goToSlide(Math.min(current + 1, slides.length - 1));
+  } else if(e.key === 'ArrowUp' || e.key === 'PageUp'){
+    e.preventDefault();
+    goToSlide(Math.max(current - 1, 0));
+  } else if(e.key === 'Escape'){
+    toggleIndex(false);
+  }
+});

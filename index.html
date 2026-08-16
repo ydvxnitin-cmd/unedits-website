@@ -3,333 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UNEDITS — Built for Those Who Notice the Difference.</title>
+<title>UNEDITS — We Engineer Digital Experiences</title>
+<meta name="description" content="UNEDITS is a digital technology studio building web platforms, apps, cloud infrastructure and brand systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <div class="nav-left">
-    <button class="index-link" onclick="openDrawer()">Index</button>
-  </div>
-  <a href="/" class="wordmark-block">
-    <img src="unedits-logo.webp" alt="UNEDITS" class="wordmark-img">
-  </a>
-  <div class="nav-right">
-    <a href="contact.html" class="talk-btn">Let's Talk →</a>
-  </div>
-</header>
+<a class="skip-link" href="#hero">Skip to content</a>
 
-<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
-<nav class="drawer" id="drawer">
-  <button class="drawer-close" onclick="closeDrawer()">✕</button>
-  <div class="drawer-top">
-    <img src="unedits-logo.webp" alt="UNEDITS" class="drawer-logo-img">
-    <div class="drawer-links">
-      <a href="#work">Work</a>
-      <a href="#studio">Studio</a>
-      <a href="#journal">Journal</a>
-      <a href="contact.html" class="talk-link">Let's Talk</a>
-    </div>
-  </div>
-  <div class="drawer-bottom">
-    <p>Follow Us On</p>
-    <div class="drawer-socials">
-      <a href="#" aria-label="Instagram">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.7"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>
-      </a>
-      <a href="#" aria-label="LinkedIn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.7"/><path d="M7 10v7M7 7v.01M11 17v-4.5c0-1.4 1-2.5 2.4-2.5s2.6 1.1 2.6 2.5V17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-      </a>
-    </div>
-  </div>
+<div class="corner-mark">
+  <span class="corner-logo">UN<span class="corner-dot">•</span>EDITS</span>
+</div>
+
+<button class="index-toggle" id="indexToggle" aria-label="Open menu" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+
+<nav class="index-panel" id="indexPanel">
+  <ul>
+    <li><a data-target="0" href="#hero">01 — Hero</a></li>
+    <li><a data-target="1" href="#manifesto">02 — Manifesto</a></li>
+    <li><a data-target="2" href="#services">03 — Services</a></li>
+    <li><a data-target="3" href="#work">04 — Work</a></li>
+    <li><a data-target="4" href="#numbers">05 — Numbers</a></li>
+    <li><a data-target="5" href="#contact">06 — Contact</a></li>
+  </ul>
 </nav>
 
-<main>
-  <section class="hero-carousel" id="hero">
-    <div class="carousel-track" id="carouselTrack">
-      <div class="carousel-slide active">
-        <img src="identity.webp" alt="Identity Refresh">
-        <div class="carousel-caption">
-          <h3>Identity Refresh</h3>
-          <p>Complete brand identity system for a growing D2C label.</p>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <img src="product.webp" alt="Product Redesign">
-        <div class="carousel-caption">
-          <h3>Product Redesign</h3>
-          <p>End-to-end UI/UX overhaul for a fintech mobile app.</p>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <img src="launch.webp" alt="Launch Campaign">
-        <div class="carousel-caption">
-          <h3>Launch Campaign</h3>
-          <p>Video editing and motion design for a national product launch.</p>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <img src="ecom.webp" alt="E-Commerce Build">
-        <div class="carousel-caption">
-          <h3>E-Commerce Build</h3>
-          <p>Website design and development for a premium retail brand.</p>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <img src="social.webp" alt="Social Campaign">
-        <div class="carousel-caption">
-          <h3>Social Campaign</h3>
-          <p>Brand strategy and content system for a hospitality client.</p>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-dots" id="carouselDots"></div>
-  </section>
+<div class="dot-nav" id="dotNav" aria-hidden="true"></div>
 
-  <section class="editorial-intro">
-    <div class="editorial-inner">
-      <h2>We Design Everything <span>For Every Brand.</span></h2>
-      <div class="tag-cloud">
-        <span>Video Editing</span><span>Graphic Design</span><span>Branding</span><span>UI/UX Design</span><span>Website Design</span>
-        <span class="tag-divider"></span>
-        <span>Startups</span><span>D2C Brands</span><span>Hospitality</span><span>Fashion</span><span>Technology</span><span>Real Estate</span>
+<main class="scroll-wrap" id="scrollWrap">
+
+  <!-- 01 HERO -->
+  <section class="slide" id="hero" data-index="0">
+    <div class="slide-bg bg-grid bg-grid--hero"></div>
+    <div class="slide-content hero-content">
+      <div class="hero-nav">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#numbers">About</a>
+        <a href="#contact">Contact</a>
       </div>
+      <h1 class="hero-title">
+        <span class="line"><span class="w">We</span> <span class="w">Engineer</span></span>
+        <span class="line"><span class="w">Digital</span> <span class="w">Experiences.</span></span>
+      </h1>
+      <p class="hero-sub">Web&nbsp;·&nbsp;App&nbsp;·&nbsp;Cloud&nbsp;·&nbsp;AI — built by a studio that treats software like craft.</p>
+      <p class="scroll-hint">*scroll to discover</p>
     </div>
   </section>
 
-  <section class="services reveal-up">
-    <p class="services-eyebrow">What We Do</p>
-    <h2 class="services-headline">Every discipline a brand needs, <strong>under one roof.</strong></h2>
-    <div class="marquee">
-      <div class="marquee-track" id="servicesTrack"></div>
+  <!-- 02 MANIFESTO -->
+  <section class="slide" id="manifesto" data-index="1">
+    <div class="slide-bg bg-grid bg-grid--manifesto"></div>
+    <div class="slide-content manifesto-content">
+      <button class="back-arrow" data-target="0" aria-label="Back to top">↺</button>
+      <p class="manifesto-quote">What sets us apart is our belief that every product is a system — and every system deserves to be engineered like it matters.</p>
+      <span class="manifesto-mark">— UNEDITS</span>
     </div>
   </section>
 
-  <section class="work-grid-section" id="work">
-    <div class="work-grid-inner">
-      <div class="work-grid-head">
-        <p class="section-eyebrow">Selected Work</p>
-        <h2 class="section-heading">Recent Projects</h2>
-      </div>
-      <div class="work-grid">
-        <a href="#" class="work-tile wt-pos1 reveal-up">
-          <img src="identity.webp" alt="Identity System — D2C Label">
-          <div class="wt-overlay">
-            <span class="wt-tag">Branding</span>
-            <h3>Identity System — D2C Label</h3>
-          </div>
-        </a>
-        <a href="#" class="work-tile wt-pos2 reveal-up">
-          <img src="product.webp" alt="Fintech App — UI/UX Overhaul">
-          <div class="wt-overlay">
-            <span class="wt-tag">Product</span>
-            <h3>Fintech App — UI/UX Overhaul</h3>
-          </div>
-        </a>
-        <a href="#" class="work-tile wt-pos3 reveal-up">
-          <img src="launch.webp" alt="Launch Campaign — Video &amp; Motion">
-          <div class="wt-overlay">
-            <span class="wt-tag">Motion</span>
-            <h3>Launch Campaign — Video &amp; Motion</h3>
-          </div>
-        </a>
-        <a href="#" class="work-tile wt-pos4 reveal-up">
-          <img src="ecom.webp" alt="E-Commerce Build — Retail Brand">
-          <div class="wt-overlay">
-            <span class="wt-tag">Web</span>
-            <h3>E-Commerce Build — Retail Brand</h3>
-          </div>
-        </a>
-      </div>
-      <a href="contact.html" class="portfolio-cta">Start Your Project →</a>
+  <!-- 03 SERVICES -->
+  <section class="slide" id="services" data-index="2">
+    <div class="slide-bg bg-grid bg-grid--services"></div>
+    <div class="slide-content services-content">
+      <p class="eyebrow">What We Build</p>
+      <h2 class="section-title">Six Disciplines.<br>One Studio.</h2>
+      <ul class="service-list">
+        <li><span class="s-num">01</span><span class="s-name">Web Development</span><span class="s-desc">Fast, scalable platforms built on modern stacks.</span></li>
+        <li><span class="s-num">02</span><span class="s-name">Mobile Apps</span><span class="s-desc">Native and cross-platform apps engineered for real use.</span></li>
+        <li><span class="s-num">03</span><span class="s-name">Cloud &amp; DevOps</span><span class="s-desc">Infrastructure that scales quietly in the background.</span></li>
+        <li><span class="s-num">04</span><span class="s-name">UI/UX Design</span><span class="s-desc">Interfaces designed around how people actually work.</span></li>
+        <li><span class="s-num">05</span><span class="s-name">Branding &amp; Design</span><span class="s-desc">Identity systems that carry a clear point of view.</span></li>
+        <li><span class="s-num">06</span><span class="s-name">AI &amp; Automation</span><span class="s-desc">Workflows and tools that remove the repetitive work.</span></li>
+      </ul>
     </div>
   </section>
 
-  <section class="process-section" id="studio">
-    <div class="process-inner">
-      <p class="section-eyebrow">How We Work</p>
-      <h2 class="section-heading">From Brief To Launch, In Four Moves</h2>
-      <div class="process-steps">
-        <div class="process-step reveal-up">
-          <span class="process-num">01</span>
-          <h3>Discover</h3>
-          <p>Brief, audience, and competitive landscape mapped out before a single pixel moves.</p>
-        </div>
-        <div class="process-step reveal-up">
-          <span class="process-num">02</span>
-          <h3>Design</h3>
-          <p>Concepts explored fast, then refined until it's the right answer — not just a finished one.</p>
-        </div>
-        <div class="process-step reveal-up">
-          <span class="process-num">03</span>
-          <h3>Build</h3>
-          <p>Development and production run on a tight workflow, so nothing ships half-way.</p>
-        </div>
-        <div class="process-step reveal-up">
-          <span class="process-num">04</span>
-          <h3>Launch</h3>
-          <p>Live, tracked, and handed off with the systems in place to scale past day one.</p>
-        </div>
+  <!-- 04 WORK -->
+  <section class="slide" id="work" data-index="3">
+    <div class="slide-bg bg-grid bg-grid--work"></div>
+    <div class="slide-content work-content">
+      <p class="eyebrow">Selected Work</p>
+      <h2 class="section-title">Recent Builds</h2>
+      <ul class="work-list">
+        <li><span class="w-title">Fintech Platform</span><span class="w-tag">Full-Stack Rebuild</span></li>
+        <li><span class="w-title">D2C Commerce</span><span class="w-tag">Headless Storefront</span></li>
+        <li><span class="w-title">SaaS Dashboard</span><span class="w-tag">Product Design System</span></li>
+        <li><span class="w-title">Hospitality Group</span><span class="w-tag">Booking Engine + Brand</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 05 NUMBERS -->
+  <section class="slide" id="numbers" data-index="4">
+    <div class="slide-bg bg-grid bg-grid--numbers"></div>
+    <div class="slide-content numbers-content">
+      <p class="eyebrow">By The Numbers</p>
+      <h2 class="section-title">Delivering Value, Consistently</h2>
+      <div class="stat-row">
+        <div class="stat"><span class="stat-num" data-target="50" data-suffix="+">0</span><span class="stat-label">Projects Shipped</span></div>
+        <div class="stat"><span class="stat-num" data-target="40" data-suffix="+">0</span><span class="stat-label">Clients Served</span></div>
+        <div class="stat"><span class="stat-num" data-target="15" data-suffix="+">0</span><span class="stat-label">Engineers &amp; Designers</span></div>
+        <div class="stat"><span class="stat-num" data-target="4" data-suffix="+">0</span><span class="stat-label">Countries Served</span></div>
       </div>
     </div>
   </section>
 
-  <section class="stats-section" id="stats">
-    <div class="stats-inner">
-      <h2 class="section-heading">Delivering Value, Consistently</h2>
+  <!-- 06 CONTACT -->
+  <section class="slide" id="contact" data-index="5">
+    <div class="slide-bg bg-grid bg-grid--contact"></div>
+    <div class="slide-content contact-content">
+      <p class="eyebrow">Start A Project</p>
+      <h2 class="cta-title">Let's Build Something<br>That Lasts.</h2>
+      <p class="cta-sub">Tell us what you're building — we'll tell you how we'd engineer it.</p>
+      <a href="mailto:hello@unedits.studio" class="cta-btn">hello@unedits.studio →</a>
 
-      <div class="stats-map-wrap">
-        <img src="worldmap.svg" alt="UNEDITS global client presence map" class="stats-map">
-        <span class="map-pin map-pin-in map-pin-india" style="left:73%; top:38%;">India — 6+ Cities</span>
-        <span class="map-pin map-pin-intl" style="left:66.29%; top:45.23%;">Dubai</span>
-        <span class="map-pin map-pin-intl" style="left:49.72%; top:25.02%;">London</span>
-        <span class="map-pin map-pin-intl" style="left:28.09%; top:33.68%;">New York</span>
-      </div>
-
-      <div class="stats-row">
-        <div class="stat-block">
-          <span class="stat-num" data-target="5" data-suffix="+">0+</span>
-          <span class="stat-label">Projects Completed</span>
+      <div class="footer-row">
+        <span class="footer-copy">© 2026 UNEDITS. All rights reserved.</span>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.7"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.7"/><path d="M7 10v7M7 7v.01M11 17v-4.5c0-1.4 1-2.5 2.4-2.5s2.6 1.1 2.6 2.5V17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </a>
         </div>
-        <span class="stat-divider"></span>
-        <div class="stat-block">
-          <span class="stat-num" data-target="50" data-suffix="+">0+</span>
-          <span class="stat-label">Clients</span>
-        </div>
-        <span class="stat-divider"></span>
-        <div class="stat-block">
-          <span class="stat-num" data-target="10" data-suffix="+">0+</span>
-          <span class="stat-label">Team Size</span>
-        </div>
+        <span class="footer-tag">Build. Automate. Scale.</span>
       </div>
     </div>
   </section>
 
-  <section class="testimonials-section">
-    <p class="section-eyebrow">Client Word</p>
-    <h2 class="section-heading">What It's Like To Work With Us</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal-up">
-        <span class="testimonial-mark">“</span>
-        <p class="testimonial-quote">They didn't just redesign our app — they questioned every screen until the flow actually made sense. Drop-offs are down, and it finally feels premium.</p>
-        <div class="testimonial-person">
-          <span class="testimonial-avatar">R</span>
-          <div>
-            <p class="testimonial-name">Founder</p>
-            <p class="testimonial-role">D2C Skincare Label</p>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal-up">
-        <span class="testimonial-mark">“</span>
-        <p class="testimonial-quote">Fast, sharp, and genuinely opinionated. UNEDITS pushed back on our first brief and the final identity was better for it.</p>
-        <div class="testimonial-person">
-          <span class="testimonial-avatar">A</span>
-          <div>
-            <p class="testimonial-name">Marketing Head</p>
-            <p class="testimonial-role">Hospitality Group</p>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal-up">
-        <span class="testimonial-mark">“</span>
-        <p class="testimonial-quote">Our launch video got more watch-time than anything we'd put out before. The team understood the platform, not just the brief.</p>
-        <div class="testimonial-person">
-          <span class="testimonial-avatar">S</span>
-          <div>
-            <p class="testimonial-name">Co-Founder</p>
-            <p class="testimonial-role">Fintech Startup</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="journal-section" id="journal">
-    <p class="section-eyebrow">From The Studio</p>
-    <h2 class="section-heading">Notes On The Work</h2>
-    <div class="journal-grid">
-      <a href="#" class="journal-card reveal-up">
-        <span class="journal-tag">Video</span>
-        <h3>Why Motion Is The New Minimum For Brand Video</h3>
-        <p>Static content stopped moving the needle years ago — here's what's replacing it.</p>
-        <span class="journal-read">Read More →</span>
-      </a>
-      <a href="#" class="journal-card reveal-up">
-        <span class="journal-tag">Product</span>
-        <h3>Designing Interfaces People Actually Finish Using</h3>
-        <p>Completion, not clicks, is the metric that should be driving your UX decisions.</p>
-        <span class="journal-read">Read More →</span>
-      </a>
-      <a href="#" class="journal-card reveal-up">
-        <span class="journal-tag">Web</span>
-        <h3>Building Websites That Convert, Not Just Look Good</h3>
-        <p>A good-looking site that doesn't sell is just an expensive brochure.</p>
-        <span class="journal-read">Read More →</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="cta-band reveal-up">
-    <div class="cta-glow"></div>
-    <div class="cta-band-inner">
-      <p class="section-eyebrow">Start A Project</p>
-      <h2 class="cta-heading">Let's Build Something <span>Un-ordinary.</span></h2>
-      <p class="cta-sub">One message is all it takes. Tell us what you're building, and we'll tell you how we'd make it better.</p>
-      <a href="contact.html" class="talk-btn cta-btn">Let's Talk →</a>
-    </div>
-  </section>
 </main>
-
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <img src="unedits-logo.webp" alt="UNEDITS" class="wordmark-footer-img">
-      <p>UNEDITS is a Digital Technology Company specializing in website development, UI/UX design, graphic design, branding, cloud infrastructure, and digital solutions.</p>
-    </div>
-
-    <div class="footer-cols">
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="careers.html">Careers</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#">Video Editing</a></li>
-          <li><a href="#">Graphic Design</a></li>
-          <li><a href="#">Branding</a></li>
-          <li><a href="#">UI/UX Design</a></li>
-          <li><a href="#">Website Design</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-          <li><a href="refund.html">Refund &amp; Cancellation Policy</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 UNEDITS. All rights reserved.</p>
-    <p class="tagline">Build Automate Scale</p>
-  </div>
-</footer>
 
 <script src="script.js"></script>
 </body>

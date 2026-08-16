@@ -575,7 +575,7 @@ header.header-transparent{
 
 /* ===== STATS / GLOBAL REACH ===== */
 .stats-section{
-  min-height:100vh;
+  min-height:auto;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -593,8 +593,8 @@ header.header-transparent{
 .stats-map-wrap{
   position:relative;
   width:100%;
-  max-width:1150px;
-  margin:36px auto;
+  max-width:900px;
+  margin:24px auto;
 }
 .stats-map{
   width:100%;

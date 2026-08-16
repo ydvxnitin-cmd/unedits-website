@@ -575,26 +575,30 @@ header.header-transparent{
 
 /* ===== STATS / GLOBAL REACH ===== */
 .stats-section{
-  min-height:auto;
+  height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
   width:100%;
   background:var(--navy-deep);
-  padding:60px 6vw;
+  padding:20px 6vw;
+  overflow:hidden;
 }
 .stats-inner{
-  max-width:1300px;
+  max-width:1100px;
   margin:0 auto;
   text-align:center;
   width:100%;
   padding:0 6vw;
 }
+.stats-inner .section-heading{
+  margin-bottom:0;
+}
 .stats-map-wrap{
   position:relative;
   width:100%;
-  max-width:900px;
-  margin:24px auto;
+  max-width:650px;
+  margin:16px auto;
 }
 .stats-map{
   width:100%;
@@ -638,7 +642,7 @@ header.header-transparent{
   justify-content:space-evenly;
   gap:24px;
   flex-wrap:wrap;
-  margin-top:48px;
+  margin-top:16px;
   width:100%;
 }
 .stat-block{

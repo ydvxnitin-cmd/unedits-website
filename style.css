@@ -598,11 +598,12 @@ header.header-transparent{
 .stats-map-wrap{
   position:relative;
   width:100%;
-  max-width:600px;
-  margin:14px auto;
+  max-width:900px;
+  margin:10px auto;
 }
 .stats-map{
   width:100%;
+  height:auto;
   display:block;
 }
 .map-pin{

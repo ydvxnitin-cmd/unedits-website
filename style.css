@@ -592,7 +592,7 @@ header.header-transparent{
   padding:0 6vw;
 }
 .stats-inner .section-heading{
-  margin-bottom:0;
+  margin-bottom:20px;
   font-size:clamp(20px,3vw,32px);
 }
 .stats-map-wrap{

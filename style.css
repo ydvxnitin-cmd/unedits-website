@@ -581,7 +581,7 @@ header.header-transparent{
   justify-content:center;
   width:100%;
   background:var(--navy-deep);
-  padding:20px 6vw;
+  padding:10px 6vw;
   overflow:hidden;
 }
 .stats-inner{
@@ -593,12 +593,13 @@ header.header-transparent{
 }
 .stats-inner .section-heading{
   margin-bottom:0;
+  font-size:clamp(20px,3vw,32px);
 }
 .stats-map-wrap{
   position:relative;
   width:100%;
-  max-width:650px;
-  margin:16px auto;
+  max-width:600px;
+  margin:14px auto;
 }
 .stats-map{
   width:100%;
@@ -642,7 +643,7 @@ header.header-transparent{
   justify-content:space-evenly;
   gap:24px;
   flex-wrap:wrap;
-  margin-top:16px;
+  margin-top:10px;
   width:100%;
 }
 .stat-block{
@@ -1136,6 +1137,7 @@ main{
 footer{
   background:var(--navy-deep);
   padding:64px 5vw 32px;
+  border-top:1px solid var(--hairline);
 }
 .footer-top{
   display:flex;

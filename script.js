@@ -49,7 +49,7 @@ if(slides.length){
   const slideObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const idx = parseInt(entry.target.getAttribute('data-index'), 10);
-      if(entry.isIntersecting && entry.intersectionRatio >= 0.55){
+      if(entry.intersectionRatio >= 0.55){
         entry.target.classList.add('active');
         dots.forEach(d => d.classList.remove('active'));
         if(dots[idx]) dots[idx].classList.add('active');
@@ -58,11 +58,11 @@ if(slides.length){
         if(entry.target.id === 'numbers'){
           animateStats();
         }
-      } else if(!entry.isIntersecting){
+      } else {
         entry.target.classList.remove('active');
       }
     });
-  }, { threshold:[0, 0.55, 1] });
+  }, { threshold:[0, 0.25, 0.55, 0.75, 1] });
 
   slides.forEach(slide => slideObserver.observe(slide));
 

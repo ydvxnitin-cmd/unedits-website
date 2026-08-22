@@ -31,7 +31,7 @@ ul{ list-style:none; }
 /* ===== CORNER LOGO ===== */
 .corner-mark{
   position:fixed;
-  top:28px; left:5vw;
+  top:36px; left:5vw;
   z-index:60;
   mix-blend-mode:difference;
 }
@@ -425,9 +425,9 @@ ul{ list-style:none; }
 .work-list li:hover{ padding-left:12px; }
 .work-list li:hover .w-title{ color:var(--accent-soft); }
 .w-title{
-  font-family:'Instrument Serif',serif;
-  font-style:italic;
-  font-size:clamp(22px,3.2vw,36px);
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:600;
+  font-size:clamp(17px,2.2vw,24px);
   color:var(--ink);
   transition:color .3s ease;
 }
@@ -531,7 +531,6 @@ ul{ list-style:none; }
 }
 .footer-socials a:hover{ border-color:var(--line-strong); color:var(--ink); }
 @media (max-width:640px){
-  .footer-row{ flex-direction:column; text-align:center; }
 }
 
 /* ===== FOCUS STATES ===== */
@@ -542,7 +541,14 @@ a:focus-visible, button:focus-visible{
 
 /* ===== MOBILE ===== */
 @media (max-width:640px){
-  .corner-mark{ top:20px; }
+  .footer-row{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:16px;
+  }
+  .footer-socials{ justify-content:center; }
+  .corner-mark{ top:30px; }
   .index-toggle{ top:18px; }
   .hero-nav{ gap:16px; flex-wrap:wrap; }
   .hero-nav a{ font-size:11px; letter-spacing:0.14em; }
